@@ -1,0 +1,27 @@
+<h1>Second route</h1>
+
+<div>model.isLoading: {{this.model.isLoading}}</div>
+<div>model.isLoaded: {{this.model.isLoaded}}</div>
+<div>model.isReloading: {{this.model.isReloading}}</div>
+<br>
+<br>
+<div>model.children.isPending: {{this.model.children.isPending}}</div>
+<div>model.children.isSettled: {{this.model.children.isSettled}}</div>
+<br>
+<br>
+<div>model.childrenLoading: {{this.model.childrenLoading}}</div>
+<br>
+<br>
+
+<div>
+  Parent name: {{this.model.name}}
+</div>
+{{#each this.model.children as |child|}}
+  <div>{{child.name}}</div>
+{{else}}
+  {{#if this.model.childrenLoading}}
+    <div>Loading...</div>
+  {{else}}
+  	<div>Nothing to display</div>
+  {{/if}}
+{{/each}}

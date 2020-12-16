@@ -1,0 +1,9 @@
+<h1>App route</h1>
+{{#each this.model as |parent|}}
+  <div>{{parent.name}}</div>
+  <LinkTo @route="second-route" @model={{parent.id}}>
+    Go to second route with this model
+  </LinkTo>
+{{/each}}
+
+{{outlet}}
